@@ -19,7 +19,6 @@ public class FruitaController {
     @Autowired
     private FruitaRepository fruitaRepository;
 
-
     @PostMapping("/add")
     public ResponseEntity<Fruita> anadirFruita(@RequestBody Fruita fruita) {
         try {
