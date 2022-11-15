@@ -19,7 +19,7 @@ public class Fruita {
     public Fruita() {
     }
 
-    public Fruita(int id, String nombre, int quantitatQuilos) {
+    public Fruita(String nombre, int quantitatQuilos) {
         this.id = id;
         this.nombre = nombre;
         this.quantitatQuilos = quantitatQuilos;
