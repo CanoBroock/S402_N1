@@ -1,7 +1,7 @@
 package cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n01.controllers;
 
-import cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n01.model.domain.Fruita;
-import cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n01.model.repository.FruitaRepository;
+import cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n01.model.Fruita;
+import cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n01.repository.FruitaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
