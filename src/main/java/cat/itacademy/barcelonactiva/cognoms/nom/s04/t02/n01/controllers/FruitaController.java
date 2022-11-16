@@ -30,9 +30,9 @@ public class FruitaController {
         }
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<Fruita> updateFruita(@RequestBody Fruita fruita) {
-        Optional<Fruita> fruitaData = fruitaRepository.findById(fruita.getId());
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Fruita> updateTutorial(@PathVariable("id") long id, @RequestBody Fruita fruita) {
+        Optional<Fruita> fruitaData = fruitaRepository.findById((int) id);
 
         if (fruitaData.isPresent()) {
             Fruita _fruita = fruitaData.get();
@@ -66,14 +66,14 @@ public class FruitaController {
     }
 
     @GetMapping("/getAll")
-    public ResponseEntity<List<Fruita>> getAllFruita(@RequestParam(required = false) String title) {
+    public ResponseEntity<List<Fruita>> getAllFruita() {
         try {
-            List<Fruita> fruitas = new ArrayList<Fruita>();
-
+            List<Fruita> fruitas = fruitaRepository.findAll();
             if (fruitas.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            } else {
+                return new ResponseEntity<>(fruitas, HttpStatus.OK);
             }
-            return new ResponseEntity<>(fruitas, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
